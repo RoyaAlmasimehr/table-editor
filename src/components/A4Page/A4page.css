@@ -1,0 +1,53 @@
+.a4-page {
+  width: min(90vw, 700px);
+  aspect-ratio: 210 / 297;
+
+  background-color: white;
+  padding: 30px;
+
+  position: relative;
+  overflow: hidden;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.table-wrapper {
+  position: absolute;
+  width: 80%;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+}
+
+.resize-handle {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  background: #2563eb;
+  cursor: nesw-resize;
+  touch-action: none;
+}
+
+
+.edit-button {
+  position: absolute;
+  left: calc(100% + 8px);
+  top: 0;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  opacity: 0;
+  visibility:hidden;
+  transition: opacity 0.2s;
+}
+
+.table-wrapper:hover .edit-button,
+.table-wrapper.is-edit-mode .edit-button {
+  opacity: 1;
+  visibility: visible;
+}
